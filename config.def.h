@@ -1,9 +1,11 @@
 /*     _                      */
 /*  __| |_      ___ __ ___     riddle00 */
-/* / _` \ \ /\ / / '_ ` _ \   https://www.github.com/00riddle00/ */
+/* / _` \ \ /\ / / '_ ` _ \    https://www.github.com/00riddle00/ */
 /*| (_| |\ V  V /| | | | | |  */
 /* \__,_| \_/\_/ |_| |_| |_|  */
+
 /* See LICENSE file for copyright and license details. */
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -74,10 +76,12 @@ static const char *dmenucmd[]  = { "dmenu_run", "-p", "Run: ", NULL };
 static const char *termcmd[]   = { "urxvt", NULL };
 
 static Key keys[] = {
+    /* ========================================================================= */
+    /*  Basic Bindings                                                           */
+    /* ========================================================================= */
+
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_Insert, spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -87,30 +91,11 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ ALTKEY,                       XK_Escape,      killclient,     {0} },
-
-    /* Layout manipulation */
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-
-     /* Switch to specific layouts */
-	{ MODKEY,               XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,               XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,               XK_x,      setlayout,      {.v = &layouts[2]} },
-
+	{ MODKEY,                       XK_q,  	     quit,		     {0} },
+    { ALTKEY,                       XK_F12,      quit,           {1} }, 
+    { ALTKEY,                       XK_r,        quit,           {1} }, 
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-
-    /* Switching between monitors */
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-
-    /* Various bindings */
-	{ ALTKEY,              XK_F3,    spawn,           CMD("urxvt -e i3-vimnotes") },
-	{ MODKEY,              XK_c,     spawn,           CMD("activate spotify") },
-	{ MODKEY,              XK_F9,    spawn,           CMD("activate brave") },
-
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -120,8 +105,74 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,                       XK_q,  	     quit,		     {0} },
-    { MODKEY,                       XK_F12,      quit,           {1} }, 
+
+    /* Layout manipulation */
+	{ MODKEY,                       XK_space,  setlayout,      {0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+
+     /* Switch to specific layouts */
+	//{ MODKEY,               XK_t,      setlayout,      {.v = &layouts[0]} },
+	//{ MODKEY,               XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,               XK_x,      setlayout,      {.v = &layouts[2]} },
+
+    /* Switching between monitors */
+	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+
+    /* ========================================================================= */
+    /*  Letter Bindings                                                          */
+    /* ========================================================================= */
+
+	{ MODKEY,              XK_c,            spawn,           CMD("activate spotify") },
+    { MODKEY,              XK_p,            spawn,           CMD("dmenu-pastes") },
+    { MODKEY,              XK_q,            spawn,           CMD("activate emacs") },
+    { MODKEY,              XK_o,            spawn,           CMD("keepass $DROPBOX/sync/keepass/8gb.kdbx") },
+
+    { MODKEY,              XK_f,            spawn,           CMD("activate filezilla") },
+    { ALTKEY,              XK_e,            spawn,           CMD("thunar") },
+    { MODKEY,              XK_e,            spawn,           CMD("activate \"File Manager\"") },
+    { MODKEY,              XK_g,            spawn,           CMD("smartgit") },
+    { MODKEY,              XK_semicolon,    spawn,           CMD("libreoffice") },
+    { MODKEY,              XK_t,            spawn,           CMD("qutebrowser-wall") },
+    { MODKEY,              XK_r,            spawn,           CMD("urxvt -e ranger") },
+    { MODKEY,              XK_y,            spawn,           CMD("urxvt -e calcurse -D ~/.config/calcurse") },
+    { MODKEY,              XK_i,            spawn,           CMD("urxvt -e htop") },
+    { MODKEY,              XK_s,            spawn,           CMD("betterlockscreen -t \"\" -l") },
+    { MODKEY,              XK_b,            spawn,           CMD("gimp") },
+
+    /* ========================================================================= */
+    /*  Function Buttons                                                         */
+    /* ========================================================================= */
+
+	{ MODKEY,              XK_F1,           spawn,           CMD("urxvt -e killall picom && picom -b") },
+	{ ALTKEY,              XK_F2,           spawn,           CMD("urxvt -name t2") },
+    { MODKEY,              XK_F2,           spawn,           CMD("wmctrl -x -a t2.URxvt") },
+	{ ALTKEY,              XK_F3,           spawn,           CMD("urxvt -e i3-vimnotes") },
+    { MODKEY,              XK_F3,           spawn,           CMD("wmctrl -x -a notes.URxvt") },
+	{ ALTKEY,              XK_F4,           spawn,           CMD("activate firefox") },
+	{ ALTKEY,              XK_F5,           spawn,           CMD("subl3") },
+	{ ALTKEY,              XK_F7,           spawn,           CMD("activate thunderbird") },
+	{ MODKEY,              XK_F9,           spawn,           CMD("activate brave") },
+	{ ALTKEY,              XK_F10,          spawn,           CMD("activate qalculate-gtk") },
+
+	{ MODKEY,              XK_Insert,       spawn,           {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,    XK_Insert,       spawn,           CMD("dmenu-surfraw") },
+
+	{ MODKEY,              XK_F5,           spawn,           CMD("light -U 10") },
+	{ MODKEY,              XK_F6,           spawn,           CMD("light -A 10") },
+	{ MODKEY,              XK_F11,          spawn,           CMD("amixer set Master 10%-") },
+	{ MODKEY,              XK_F12,          spawn,           CMD("amixer set Master 10%+") },
+	{ MODKEY|ShiftMask,    XK_Delete,       spawn,           CMD("amixer -q sset Master toggle") },
+
+	{ MODKEY,              XK_Return,       spawn,          {.v = termcmd } },
+
+    { MODKEY,              XK_Prior,        spawn,           CMD("$SHELL_SCRIPTS_DIR/reactivate_xkbmap.sh") },
+    { MODKEY,              XK_Next,         spawn,           CMD("$SHELL_SCRIPTS_DIR/deactivate_xkbmap.sh") },
+
+/* crashes */	{ MODKEY,              XK_Print,        spawn,           CMD("flameshot gui -p /home/riddle/Screenshots") },
+	{ MODKEY|ShiftMask,    XK_Print,        spawn,           CMD("scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png") },
 };
 
 /* button definitions */
