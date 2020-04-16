@@ -129,6 +129,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 
+	{ ALTKEY,           XK_z,      togglesticky,   {0} },
+
      /* Switch to specific layouts */
 	//{ MODKEY,               XK_t,      setlayout,      {.v = &layouts[0]} },
 	//{ MODKEY,               XK_f,      setlayout,      {.v = &layouts[1]} },
