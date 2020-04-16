@@ -92,6 +92,7 @@ static const char *termcmd[]   = { "urxvt", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
+#include "shiftview.c"
 static Key keys[] = {
     /* ========================================================================= */
     /*  Basic Bindings                                                           */
@@ -108,7 +109,7 @@ static Key keys[] = {
 	//{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	//{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+	//{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ ALTKEY,                       XK_Escape, killclient,     {0} },
 	{ MODKEY,                       XK_q,  	   quit,		   {0} },
     { ALTKEY,                       XK_F12,    quit,           {1} }, 
@@ -130,6 +131,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 
 	{ ALTKEY,           XK_z,      togglesticky,   {0} },
+
+	{ MODKEY,			        XK_Tab,	shiftview,	{ .i = 1 } },
+	{ MODKEY|ShiftMask,			XK_Tab,	shiftview,	{ .i = -1 } },
 
      /* Switch to specific layouts */
 	//{ MODKEY,               XK_t,      setlayout,      {.v = &layouts[0]} },
