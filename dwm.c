@@ -1885,6 +1885,7 @@ togglefullscr(const Arg *arg)
     setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 }
 
+void
 togglesticky(const Arg *arg)
 {
 	if (!selmon->sel)
