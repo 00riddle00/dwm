@@ -69,6 +69,7 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
  	{ "[\\]",     dwindle },
+	{ NULL,       NULL },
 };
 
 /* key definitions */
@@ -98,14 +99,14 @@ static Key keys[] = {
 
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ ALTKEY,                       XK_j,      rotatestack,    {.i = +1 } },
 	{ ALTKEY,                       XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	//{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	//{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ ALTKEY,                       XK_Escape, killclient,     {0} },
@@ -134,10 +135,12 @@ static Key keys[] = {
 	{ MODKEY,               XK_x,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,               XK_y,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,               XK_u,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ControlMask,	XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,   XK_period, cyclelayout,    {.i = +1 } },
 
     /* Switching between monitors */
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	//{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	//{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
