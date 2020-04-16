@@ -12,9 +12,7 @@ static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-
 static const char *fonts[]          = { "SauceCodePro Nerd Font:size=9:antialias=true:autohint=true" };
-
 static const char dmenufont[]       = "SauceCodePro Nerd Font:size=10";
 
 static const char arch_blue[]         = "#1793d1";
@@ -27,10 +25,21 @@ static const char sea[]               = "#bdced3";
 static const char bar_bg[]            = "#002b36";
 static const char col_white[]         = "#ffffff";
 
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
+
 static const char *colors[][3]        = {
-	/*               fg          bg         border    */
-	[SchemeNorm] = { light_blue, bar_bg,    bar_bg    },
-	[SchemeSel]  = { col_white,  arch_blue, arch_blue },
+	/*                    fg          bg          border    */
+	[SchemeNorm]      = { light_blue, bar_bg,     bar_bg    },
+	[SchemeSel]       = { col_white,  arch_blue,  arch_blue },
+	[SchemeStatus]    = { arch_blue,  bar_bg,     "#000000" }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_white,  arch_blue,  "#000000" }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { light_blue, bar_bg,     "#000000" }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]   = { arch_blue,  bar_bg,     "#000000" }, // infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { col_white,  bar_bg,     "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
