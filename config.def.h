@@ -50,9 +50,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class        instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",       NULL,       NULL,       0,            1,           -1 },
+	{ "qalculate-gtk",  NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",    NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -82,7 +83,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]  = { "dmenu_run", "-p", "Run: ", NULL };
+static const char *dmenucmd[]  = { "dmenu_run", "-p", "run: ", NULL };
 static const char *termcmd[]   = { "urxvt", NULL };
 
 static Key keys[] = {
@@ -159,16 +160,16 @@ static Key keys[] = {
 
 	{ MODKEY,              XK_F1,           spawn,           CMD("urxvt -e killall picom && picom -b") },
 	{ ALTKEY,              XK_F2,           spawn,           CMD("urxvt -name t2") },
-    { MODKEY,              XK_F2,           spawn,           CMD("wmctrl -x -a t2.URxvt") },
+    { 0,                   XK_F2,           spawn,           CMD("wmctrl -x -a t2.URxvt") },
 	{ ALTKEY,              XK_F3,           spawn,           CMD("urxvt -e i3-vimnotes") },
-    { MODKEY,              XK_F3,           spawn,           CMD("wmctrl -x -a notes.URxvt") },
-	{ ALTKEY,              XK_F4,           spawn,           CMD("activate firefox") },
-	{ ALTKEY,              XK_F5,           spawn,           CMD("subl3") },
-	{ ALTKEY,              XK_F7,           spawn,           CMD("activate thunderbird") },
-	{ MODKEY,              XK_F9,           spawn,           CMD("activate brave") },
-	{ ALTKEY,              XK_F10,          spawn,           CMD("activate qalculate-gtk") },
+    { 0,                   XK_F3,           spawn,           CMD("wmctrl -x -a notes.URxvt") },
+	{ 0,                   XK_F4,           spawn,           CMD("activate firefox") },
+	{ 0,                   XK_F5,           spawn,           CMD("subl3") },
+	{ 0,                   XK_F7,           spawn,           CMD("activate thunderbird") },
+	{ 0,                   XK_F9,           spawn,           CMD("activate brave") },
+	{ 0,                   XK_F10,          spawn,           CMD("activate qalculate-gtk") },
 
-	{ MODKEY,              XK_Insert,       spawn,           {.v = dmenucmd } },
+	{ 0,                   XK_Insert,       spawn,           {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,    XK_Insert,       spawn,           CMD("dmenu-surfraw") },
 
 	{ MODKEY,              XK_F5,           spawn,           CMD("light -U 10") },
@@ -182,8 +183,8 @@ static Key keys[] = {
     { MODKEY,              XK_Prior,        spawn,           CMD("$SHELL_SCRIPTS_DIR/reactivate_xkbmap.sh") },
     { MODKEY,              XK_Next,         spawn,           CMD("$SHELL_SCRIPTS_DIR/deactivate_xkbmap.sh") },
 
-/* crashes */	{ MODKEY,              XK_Print,        spawn,           CMD("flameshot gui -p /home/riddle/Screenshots") },
-	{ MODKEY|ShiftMask,    XK_Print,        spawn,           CMD("scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png") },
+/* crashes */	{ 0,              XK_Print,        spawn,           CMD("flameshot gui -p /home/riddle/Screenshots") },
+	{ 0|ShiftMask,    XK_Print,        spawn,           CMD("scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png") },
 };
 
 /* button definitions */
