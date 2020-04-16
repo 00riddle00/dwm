@@ -90,10 +90,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ ALTKEY,                       XK_Escape,      killclient,     {0} },
-	{ MODKEY,                       XK_q,  	     quit,		     {0} },
-    { ALTKEY,                       XK_F12,      quit,           {1} }, 
-    { ALTKEY,                       XK_r,        quit,           {1} }, 
+	{ ALTKEY,                       XK_Escape, killclient,     {0} },
+	{ MODKEY,                       XK_q,  	   quit,		   {0} },
+    { ALTKEY,                       XK_F12,    quit,           {1} }, 
+    { ALTKEY,                       XK_r,      quit,           {1} }, 
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	TAGKEYS(                        XK_1,                      0)
@@ -129,7 +129,6 @@ static Key keys[] = {
     { MODKEY,              XK_p,            spawn,           CMD("dmenu-pastes") },
     { MODKEY,              XK_q,            spawn,           CMD("activate emacs") },
     { MODKEY,              XK_o,            spawn,           CMD("keepass $DROPBOX/sync/keepass/8gb.kdbx") },
-
     { MODKEY,              XK_f,            spawn,           CMD("activate filezilla") },
     { ALTKEY,              XK_e,            spawn,           CMD("thunar") },
     { MODKEY,              XK_e,            spawn,           CMD("activate \"File Manager\"") },
