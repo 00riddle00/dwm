@@ -12,7 +12,7 @@
 # * Everything is moved to the first workspace on dwm recompile + reinstall
 # * Programs do not open on their indicated workspaces
 # * Focusing programs do not open their workspace
-# * Jetbrains ???
+# * Jetbrains programs do not launch (only one grey window taking up all screen)
 # * Picom focuses windows incorrectly (reverse behaviour)
 # * dmwblocks do not update at all
 # * multi-screen functionality does not work (or I just haven't learnt how to use it)
