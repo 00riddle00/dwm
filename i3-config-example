@@ -11,6 +11,7 @@
 #
 # * Everything is moved to the first workspace on dwm recompile + reinstall
 # * Programs do not open on their indicated workspaces
+# * Floating windows can not be dragged around and resized
 # * Focusing programs do not open their workspace
 # * Jetbrains programs do not launch (only one grey window taking up all screen)
 # * Picom focuses windows incorrectly (reverse behaviour)
