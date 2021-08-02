@@ -11,14 +11,15 @@
 #
 # * Everything is moved to the first workspace on dwm recompile + reinstall
 # * Programs do not open on their indicated workspaces
-# * Floating windows can not be dragged around and resized
-# * Focusing programs do not open their workspace
+# * Floating windows dragged around and resized using Mod key, not Alt
+# * Some programs need to be opened as floating windows (pavucontrol, qalculate, etc.)
 # * Jetbrains programs do not launch (only one grey window taking up all screen)
 # * Picom focuses windows incorrectly (reverse behaviour)
 # * dmwblocks do not update at all
 # * multi-screen functionality does not work (or I just haven't learnt how to use it)
 # * Extra XF86 keys: Raise/Lower Volumne and Brightness Up/Down keys do not work
 #       Other XF86 keys in dwm behave just the same as in i3
+# * alt+u - unwanted behaviour
 # -----------------------------------------------------------------------------------
 #  _ _____                    __ _
 # (_)___ /    ___ ___  _ __  / _(_) __ _
@@ -216,7 +217,7 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 +++++bindsym $mod+o $run "keepass $DROPBOX/keepass/8gb.kdbx"
 +++++bindsym $mod+f $run activate filezilla
 +++++bindsym $alt+e $run thunar
------bindsym $mod+e $run wmctrl -a "File Manager"
+*****bindsym $mod+e $run wmctrl -a "File Manager"
 +++++bindsym $mod+g $run activate smartgit
 +++++bindsym $mod+semicolon $run activate libreoffice
 -----bindsym $mod+n workspace $ws2; $run brave
@@ -238,17 +239,17 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 # also very useful for switching between two displays
 -----bindsym $alt+Tab $run i3-msg 'workspace back_and_forth'
 
------bindsym $mod+u $run i3-activate-dropdown
------bindsym $alt+u $run $term -name dropdown_aux -e tmux new-session
------bindsym $alt+q [instance="dropdown_aux"] move scratchpad;
++++++bindsym $mod+u $run i3-activate-dropdown
+*****bindsym $alt+u $run $term -name dropdown_aux -e tmux new-session
++++++bindsym $alt+q [instance="dropdown_aux"] move scratchpad;
 +++++bindsym $alt+z          sticky toggle
-+++++bindsym $mod+Shift+b    bar mode toggle
+*****bindsym $mod+Shift+b    bar mode toggle
 
 # distraction free mode
 # $mod key (win key), when held, will show the statusbar
------bindsym $mod+grave    bar mode hide; gaps inner current set 0; gaps outer current set 0; gaps top current set 0
++++++bindsym $mod+grave    bar mode hide; gaps inner current set 0; gaps outer current set 0; gaps top current set 0
 # turn off distraction free mode
------bindsym $mod+Shift+grave    bar mode dock; gaps inner current set $inner; gaps outer current set $outer; gaps top current set $top
+*****bindsym $mod+Shift+grave    bar mode dock; gaps inner current set $inner; gaps outer current set $outer; gaps top current set $top
 
 *****bindsym $mod+apostrophe split horizontal
 *****bindsym $mod+slash split vertical
@@ -334,10 +335,10 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 *****bindsym F1 $run terminator
 +++++bindsym $mod+F1 $run "killall picom && picom -b"
 +++++bindsym $alt+F2 $run i3-msg '$run $term -name t2'
------bindsym F2 $run i3-msg '$run wmctrl -x -a t2.URxvt'
++++++bindsym F2 $run i3-msg '$run wmctrl -x -a t2.URxvt'
 
 -----bindsym $alt+F3 $run i3-vimnotes
------bindsym F3 $run i3-msg '$run wmctrl -x -a notes.URxvt'
++++++bindsym F3 $run i3-msg '$run wmctrl -x -a notes.URxvt'
 
 +++++bindsym F4 $run activate firefox
 +++++bindsym F5 $run subl3
@@ -374,14 +375,14 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 -----bindsym $mod+Delete        $run rofi -show Kill -modi Kill:$BIN/rofi-kill
 
 # PageUp (standard light)
------bindsym $mod+Prior         $run  redshift -P -O 6500
++++++bindsym $mod+Prior         $run  redshift -P -O 6500
 # PageDown (warm light)
------bindsym $mod+Next          $run  redshift -P -O 5000
++++++bindsym $mod+Next          $run  redshift -P -O 5000
 # Just for fun
------bindsym $mod+Pause         $run  redshift -P -O 1000
+*****bindsym $mod+Pause         $run  redshift -P -O 1000
 
-bindsym $print $run flameshot gui -p /home/riddle/Screenshots 
-bindsym Shift+$print $run scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png
++++++bindsym $print $run flameshot gui -p /home/riddle/Screenshots 
++++++bindsym Shift+$print $run scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png
 
 # ===================
 #  Arrow keys

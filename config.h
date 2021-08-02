@@ -101,7 +101,7 @@ static Key keys[] = {
     /* ========================================================================= */
 
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_grave,  togglebar,      {0} },
 	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
@@ -147,7 +147,7 @@ static Key keys[] = {
 	//{ MODKEY,               XK_x,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,               XK_x,      togglefullscr,  {0} },
 	{ MODKEY,               XK_y,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,               XK_u,      setlayout,      {.v = &layouts[4]} },
+	//{ MODKEY,               XK_u,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ControlMask,	XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,   XK_period, cyclelayout,    {.i = +1 } },
 
@@ -168,12 +168,13 @@ static Key keys[] = {
     { MODKEY,              XK_o,            spawn,           CMD("keepass $DROPBOX/keepass/8gb.kdbx") },
     { MODKEY,              XK_f,            spawn,           CMD("activate filezilla") },
     { ALTKEY,              XK_e,            spawn,           CMD("thunar") },
-    { MODKEY,              XK_e,            spawn,           CMD("activate \"File Manager\"") },
-    { MODKEY,              XK_g,            spawn,           CMD("smartgit") },
+    //{ MODKEY,              XK_e,            spawn,           CMD("wmctrl -a \"File Manager\"") },
+    { MODKEY,              XK_e,            spawn,           CMD("wmctrl -x -a thunar") },
+    { MODKEY,              XK_g,            spawn,           CMD("activate smartgit") },
     { MODKEY,              XK_semicolon,    spawn,           CMD("libreoffice") },
     { MODKEY,              XK_t,            spawn,           CMD("qutebrowser-wall") },
     { MODKEY,              XK_r,            spawn,           CMD("urxvt -e ranger") },
-    //{ MODKEY,              XK_y,            spawn,           CMD("urxvt -e calcurse -D ~/.config/calcurse") },
+    { MODKEY,              XK_y,            spawn,           CMD("urxvt -e calcurse -D ~/.config/calcurse") },
     { MODKEY,              XK_i,            spawn,           CMD("urxvt -e htop") },
     //{ MODKEY,              XK_s,            spawn,           CMD("xscreensaver-command --lock") },
     { MODKEY,              XK_s,            spawn,           CMD("betterlockscreen -t \"\" -l") },
@@ -205,12 +206,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_Delete,       spawn,           CMD("amixer -q sset Master toggle") },
 
 	{ MODKEY,              XK_Return,       spawn,          {.v = termcmd } },
-	{ MODKEY,              XK_grave,        togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,              XK_u,            togglescratch,  {.v = scratchpadcmd } },
+	{ ALTKEY,              XK_q,            togglescratch,  {.v = scratchpadcmd } },
 
-    { MODKEY,              XK_Prior,        spawn,           CMD("$SHELL_SCRIPTS_DIR/reactivate_xkbmap.sh") },
-    { MODKEY,              XK_Next,         spawn,           CMD("$SHELL_SCRIPTS_DIR/deactivate_xkbmap.sh") },
+    { MODKEY,              XK_Prior,        spawn,           CMD("redshift -P -O 6500") },
+    { MODKEY,              XK_Next,         spawn,           CMD("redshift -P -O 5000") },
 
-/* crashes */	{ 0,              XK_Print,        spawn,           CMD("flameshot gui -p /home/riddle/Screenshots") },
+    { 0,              XK_Print,        spawn,           CMD("flameshot gui -p /home/riddle/Screenshots") },
 	{ 0|ShiftMask,    XK_Print,        spawn,           CMD("scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png") },
 };
 
