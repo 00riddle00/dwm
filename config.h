@@ -191,11 +191,12 @@ static Key keys[] = {
 	{ 0,                   XK_F4,           spawn,           CMD("activate firefox") },
 	{ 0,                   XK_F5,           spawn,           CMD("subl3") },
 	{ 0,                   XK_F7,           spawn,           CMD("activate thunderbird") },
+	{ 0,                   XK_F8,           spawn,           CMD("activate teams") },
 	{ 0,                   XK_F9,           spawn,           CMD("activate brave") },
 	{ 0,                   XK_F10,          spawn,           CMD("activate qalculate-gtk") },
 
 	{ 0,                   XK_Insert,       spawn,           {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,    XK_Insert,       spawn,           CMD("dmenu-surfraw") },
+	{ MODKEY,              XK_Insert,       spawn,           CMD("dmenu-surfraw") },
 
 	{ MODKEY,              XK_F5,           spawn,           CMD("light -U 10") },
 	{ MODKEY,              XK_F6,           spawn,           CMD("light -A 10") },
