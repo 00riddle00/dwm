@@ -43,7 +43,7 @@ static const char *colors[][3]        = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "♫", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "♫" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -91,7 +91,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]  = { "dmenu_run", "-p", "run: ", NULL };
 static const char *termcmd[]   = { "urxvt", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+//static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *scratchpadcmd[] = { "urxvt", "-title", scratchpadname, "-geometry", "120x34", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -116,7 +117,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
 	//{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ ALTKEY,                       XK_Escape, killclient,     {0} },
-	{ MODKEY,                       XK_q,  	   quit,		   {0} },
+	//{ MODKEY,                       XK_q,  	   quit,		   {0} },
     { ALTKEY,                       XK_F12,    quit,           {1} }, 
     { ALTKEY,                       XK_r,      quit,           {1} }, 
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -161,9 +162,10 @@ static Key keys[] = {
     /* ========================================================================= */
 
 	{ MODKEY,              XK_c,            spawn,           CMD("activate spotify") },
-    { MODKEY,              XK_p,            spawn,           CMD("dmenu-pastes") },
+    { MODKEY|ShiftMask,    XK_p,            spawn,           CMD("dmenu-pastes") },
+    { MODKEY,              XK_p,            spawn,           CMD("pavucontrol") },
     { MODKEY,              XK_q,            spawn,           CMD("activate emacs") },
-    { MODKEY,              XK_o,            spawn,           CMD("keepass $DROPBOX/sync/keepass/8gb.kdbx") },
+    { MODKEY,              XK_o,            spawn,           CMD("keepass $DROPBOX/keepass/8gb.kdbx") },
     { MODKEY,              XK_f,            spawn,           CMD("activate filezilla") },
     { ALTKEY,              XK_e,            spawn,           CMD("thunar") },
     { MODKEY,              XK_e,            spawn,           CMD("activate \"File Manager\"") },
@@ -173,6 +175,7 @@ static Key keys[] = {
     { MODKEY,              XK_r,            spawn,           CMD("urxvt -e ranger") },
     //{ MODKEY,              XK_y,            spawn,           CMD("urxvt -e calcurse -D ~/.config/calcurse") },
     { MODKEY,              XK_i,            spawn,           CMD("urxvt -e htop") },
+    //{ MODKEY,              XK_s,            spawn,           CMD("xscreensaver-command --lock") },
     { MODKEY,              XK_s,            spawn,           CMD("betterlockscreen -t \"\" -l") },
     { MODKEY,              XK_b,            spawn,           CMD("gimp") },
 
