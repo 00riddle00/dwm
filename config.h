@@ -43,7 +43,8 @@ static const char *colors[][3]        = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "♫" };
+/* static const char *tags[] = { "", "", "", "", "", "", "", "", "♫" }; */
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -88,10 +89,9 @@ static const Layout layouts[] = {
 /* commands */
 static       char dmenumon[2]      = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]      = { "dmenu_run", "-p", "run: ", NULL };
-static const char *termcmd[]       = { "urxvt", NULL };
+static const char *termcmd[]       = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "urxvt", "-title", scratchpadname, "-geometry", "120x34", NULL };
-/*                                 = { "st", "-t", scratchpadname, "-g", "120x34", NULL };            */
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
