@@ -130,6 +130,7 @@ static Key keys[] = {
     TAGKEYS(               XK_7,                           6)
     TAGKEYS(               XK_8,                           7)
     TAGKEYS(               XK_9,                           8)
+    TAGKEYS(               XK_d,                           8)
 
     /* Layout manipulation */
     { MODKEY,              XK_space,      setlayout,       {0} },
@@ -203,7 +204,7 @@ static Key keys[] = {
     { MODKEY,              XK_F12,        spawn,           CMD("amixer set Master 10%+") },
     { MODKEY|ShiftMask,    XK_Delete,     spawn,           CMD("amixer -q sset Master toggle") },
 
-    { 0,                   XK_F12,        spawn,           CMD("dwm.rebuild") },
+    { 0,                   XK_F12,        spawn,           CMD("dmenu-dwm.rebuild") },
 
     { MODKEY,              XK_Return,     spawn,           {.v = termcmd } },
     { MODKEY,              XK_u,          togglescratch,   {.v = scratchpadcmd } },

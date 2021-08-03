@@ -9,16 +9,19 @@
 #
 # A few things that also do not work so far:
 #
-# * Everything is moved to the first workspace on dwm recompile + reinstall
-# * Programs do not open on their indicated workspaces
+# * Everything is moved to the first workspace (tag!) on dwm recompile + reinstall,
+#       and new terminal window opens (only sometimes!)
+# * Programs do not open on their indicated workspaces (tags!)
 # * Some programs need to be opened as floating windows (pavucontrol, qalculate, etc.)
-# * Jetbrains programs do not launch (only one grey window taking up all screen)
-# * Picom focuses windows incorrectly (reverse behaviour)
-# * dmwblocks do not update at all
 # * multi-screen functionality does not work (or I just haven't learnt how to use it)
+# * Need to open program (usually terminal) in scratchpad by program window name
 # * Extra XF86 keys: Raise/Lower Volumne and Brightness Up/Down keys do not work
 #       Other XF86 keys in dwm behave just the same as in i3
-# * alt+u - unwanted behaviour
+#
+# * Program specific:
+#       ** Jetbrains programs do not launch (only one grey window taking up all screen)
+#       ** Picom focuses windows incorrectly (reverse behaviour)
+#       ** Flameshot hangs up (on ESC key usually)
 # -----------------------------------------------------------------------------------
 #  _ _____                    __ _
 # (_)___ /    ___ ___  _ __  / _(_) __ _
