@@ -9,19 +9,18 @@
 #
 # A few things that also do not work so far:
 #
-# * Everything is moved to the first workspace (tag!) on dwm recompile + reinstall,
-#       and new terminal window opens (only sometimes!)
 # * Programs do not open on their indicated workspaces (tags!)
 # * Some programs need to be opened as floating windows (pavucontrol, qalculate, etc.)
 # * multi-screen functionality does not work (or I just haven't learnt how to use it)
-# * Need to open program (usually terminal) in scratchpad by program window name
-# * Extra XF86 keys: Raise/Lower Volumne and Brightness Up/Down keys do not work
-#       Other XF86 keys in dwm behave just the same as in i3
+# * Need to open a program (usually terminal) in scratchpad by the program window's name
+# * Sending event signals to dmwblocks (as with pkill -RTMIN+1 i3blocks) 
+#   - LukeSmith has got it working.
 #
 # * Program specific:
-#       ** Jetbrains programs do not launch (only one grey window taking up all screen)
 #       ** Picom focuses windows incorrectly (reverse behaviour)
-#       ** Flameshot hangs up (on ESC key usually)
+#          (probably needs changes in picom config)
+#       ** Flameshot hangs up (on ESC key usually) and also cursor 
+#          loses focus after flameshot is closed
 # -----------------------------------------------------------------------------------
 #  _ _____                    __ _
 # (_)___ /    ___ ___  _ __  / _(_) __ _
@@ -232,7 +231,7 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 +++++bindsym $mod+b $run gimp
 
 # imitate "show desktop" behaviour
------bindsym $mod+d $run i3-showdesktop $ws10 
++++++bindsym $mod+d $run i3-showdesktop $ws10 
 # imitate "win+tab" behaviour
 +++++bindsym $mod+Tab $run i3-msg 'workspace next'
 # imitate "win+Shift+tab" behaviour
@@ -260,7 +259,7 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 +++++bindsym $mod+x fullscreen toggle
 
 # exit i3 (logs you out of your X session)
------bindsym $mod+Shift+e $run "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+*****bindsym $mod+Shift+e $run "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # change focus
 -----bindsym $mod+h focus left
@@ -370,11 +369,11 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 # run surfraw
 +++++#bindsym $mod+Insert        $run dmenu-surfraw
 # run activate/focus program
-+++++#bindsym $mod+Insert        $run rofi -show Open -modi Open:$BIN/rofi-open
+*****#bindsym $mod+Insert        $run rofi -show Open -modi Open:$BIN/rofi-open
 # run logout/shutdown/reboot prompt
------bindsym $mod+End           $run rofi -show Power -modi Power:$BIN/rofi-power
++++++bindsym $mod+End           $run rofi -show Power -modi Power:$BIN/rofi-power
 # kill a process by its name/pid 
------bindsym $mod+Delete        $run rofi -show Kill -modi Kill:$BIN/rofi-kill
++++++bindsym $mod+Delete        $run rofi -show Kill -modi Kill:$BIN/rofi-kill
 
 # PageUp (standard light)
 +++++bindsym $mod+Prior         $run  redshift -P -O 6500
@@ -422,12 +421,12 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 
 # Caution: Airplane mode turns off internet!
 
------bindsym XF86AudioRaiseVolume    $run "amixer set Master 10%+"
------bindsym XF86AudioLowerVolume    $run "amixer set Master 10%-"
++++++bindsym XF86AudioRaiseVolume    $run "amixer set Master 10%+"
++++++bindsym XF86AudioLowerVolume    $run "amixer set Master 10%-"
 +++++bindsym XF86TouchpadToggle      $run toggletouchpad
 *****bindsym XF86TouchpadOn          $run synclient TouchpadOff=0
 *****bindsym XF86TouchpadOff         $run synclient TouchpadOff=1
------bindsym XF86MonBrightnessUp     $run light -A 10 && pkill -RTMIN+2 i3blocks
------bindsym XF86MonBrightnessDown   $run light -U 10 && pkill -RTMIN+2 i3blocks
++++++bindsym XF86MonBrightnessUp     $run light -A 10 && pkill -RTMIN+2 i3blocks
++++++bindsym XF86MonBrightnessDown   $run light -U 10 && pkill -RTMIN+2 i3blocks
 *****bindsym XF86RFKill              nop
 

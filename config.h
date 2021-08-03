@@ -94,6 +94,7 @@ static const char *scratchpadcmd[] = { "urxvt", "-title", scratchpadname, "-geom
 /*                                 = { "st", "-t", scratchpadname, "-g", "120x34", NULL };            */
 
 #include "shiftview.c"
+#include <X11/XF86keysym.h>
 static Key keys[] = {
     /* ========================================================================= */
     /*  Basic Bindings                                                           */
@@ -162,8 +163,10 @@ static Key keys[] = {
     /* ========================================================================= */
 
     { MODKEY,              XK_c,          spawn,           CMD("activate spotify") },
-    { MODKEY|ShiftMask,    XK_p,          spawn,           CMD("dmenu-pastes") },
     { MODKEY,              XK_p,          spawn,           CMD("pavucontrol") },
+    { MODKEY|ShiftMask,    XK_p,          spawn,           CMD("dmenu-pastes") },
+    { ALTKEY,              XK_p,          spawn,           {.v = dmenucmd } },
+    { ALTKEY|ShiftMask,    XK_p,          spawn,           CMD("dmenu-surfraw") },
     { MODKEY,              XK_q,          spawn,           CMD("activate emacs") },
     { MODKEY,              XK_o,          spawn,           CMD("keepass $DROPBOX/keepass/8gb.kdbx") },
     { MODKEY,              XK_f,          spawn,           CMD("activate filezilla") },
@@ -178,6 +181,7 @@ static Key keys[] = {
     { MODKEY,              XK_s,          spawn,           CMD("betterlockscreen -t \"\" -l") },
 /*                                                         CMD("xscreensaver-command --lock") },          */
     { MODKEY,              XK_b,          spawn,           CMD("gimp") },
+    { MODKEY,              XK_n,          spawn,           CMD("brave") },
 
     /* ========================================================================= */
     /*  Function Buttons                                                         */
@@ -195,8 +199,11 @@ static Key keys[] = {
     { 0,                   XK_F9,         spawn,           CMD("activate brave") },
     { 0,                   XK_F10,        spawn,           CMD("activate qalculate-gtk") },
 
-    { 0,                   XK_Insert,     spawn,           {.v = dmenucmd } },
-    { MODKEY,              XK_Insert,     spawn,           CMD("dmenu-surfraw") },
+    /* TODO change rofi to dmenu */
+    { 0,                   XK_Insert,     spawn,           CMD("rofi -show") },
+    { MODKEY,              XK_Insert,     spawn,           CMD("rofi -show run") },
+    { MODKEY,              XK_End,        spawn,           CMD("rofi -show Power -modi Power:$BIN/rofi-power") },
+    { MODKEY,              XK_Delete,     spawn,           CMD("rofi -show Kill -modi Kill:$BIN/rofi-kill") },
 
     { MODKEY,              XK_F5,         spawn,           CMD("light -U 10") },
     { MODKEY,              XK_F6,         spawn,           CMD("light -A 10") },
@@ -215,6 +222,15 @@ static Key keys[] = {
 
     { 0,                   XK_Print,      spawn,           CMD("flameshot gui -p /home/riddle/Screenshots") },
     { 0|ShiftMask,         XK_Print,      spawn,           CMD("scrot /home/riddle/Screenshots/screenshot-%F-%H%M%S.png") },
+
+    /* ========================================================================= */
+    /*  Extra XF86 Keys                                                          */
+    /* ========================================================================= */
+
+    { 0,    XF86XK_AudioRaiseVolume,      spawn,          CMD("amixer set Master 10%+") },
+    { 0,    XF86XK_AudioLowerVolume,      spawn,          CMD("amixer set Master 10%-") },
+    { 0,    XF86XK_MonBrightnessUp,       spawn,          CMD("light -A 10") },
+    { 0,    XF86XK_MonBrightnessDown,     spawn,          CMD("light -U 10") },
 };
 
 /* button definitions */
