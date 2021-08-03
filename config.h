@@ -114,7 +114,7 @@ static Key keys[] = {
 /*  { MODKEY,              XK_h,          setmfact,        {.f = -0.05} }, */
 /*  { MODKEY,              XK_l,          setmfact,        {.f = +0.05} }, */
     { MODKEY|ControlMask,  XK_Return,     zoom,            {0} },
-/*  { MODKEY,              XK_Tab,        view,            {0} },          */
+    { ALTKEY,              XK_Tab,        view,            {0} },          
     { ALTKEY,              XK_Escape,     killclient,      {0} },
 /*  { MODKEY,              XK_q,          quit,            {0} },          */
     { ALTKEY,              XK_F12,        quit,            {1} }, 
@@ -185,7 +185,7 @@ static Key keys[] = {
     { MODKEY,              XK_F1,         spawn,           CMD("urxvt -e killall picom && picom -b") },
     { ALTKEY,              XK_F2,         spawn,           CMD("urxvt -name t2") },
     { 0,                   XK_F2,         spawn,           CMD("wmctrl -x -a t2.URxvt") },
-    { ALTKEY,              XK_F3,         spawn,           CMD("urxvt -e i3-vimnotes") },
+    { ALTKEY,              XK_F3,         spawn,           CMD("dwm-vimnotes") },
     { 0,                   XK_F3,         spawn,           CMD("wmctrl -x -a notes.URxvt") },
     { 0,                   XK_F4,         spawn,           CMD("activate firefox") },
     { 0,                   XK_F5,         spawn,           CMD("subl3") },
@@ -202,6 +202,8 @@ static Key keys[] = {
     { MODKEY,              XK_F11,        spawn,           CMD("amixer set Master 10%-") },
     { MODKEY,              XK_F12,        spawn,           CMD("amixer set Master 10%+") },
     { MODKEY|ShiftMask,    XK_Delete,     spawn,           CMD("amixer -q sset Master toggle") },
+
+    { 0,                   XK_F12,        spawn,           CMD("dwm.rebuild") },
 
     { MODKEY,              XK_Return,     spawn,           {.v = termcmd } },
     { MODKEY,              XK_u,          togglescratch,   {.v = scratchpadcmd } },
@@ -222,11 +224,11 @@ static Button buttons[] = {
     { ClkLtSymbol,         0,             Button3,         setlayout,       {.v = &layouts[2]} },
     { ClkWinTitle,         0,             Button2,         zoom,            {0} },
     { ClkStatusText,       0,             Button2,         spawn,           {.v = termcmd } },
-    { ClkClientWin,        MODKEY,        Button1,         movemouse,       {0} },
-    { ClkClientWin,        MODKEY,        Button2,         togglefloating,  {0} },
-    { ClkClientWin,        MODKEY,        Button3,         resizemouse,     {0} },
+    { ClkClientWin,        ALTKEY,        Button1,         movemouse,       {0} },
+    { ClkClientWin,        ALTKEY,        Button2,         togglefloating,  {0} },
+    { ClkClientWin,        ALTKEY,        Button3,         resizemouse,     {0} },
     { ClkTagBar,           0,             Button1,         view,            {0} },
     { ClkTagBar,           0,             Button3,         toggleview,      {0} },
-    { ClkTagBar,           MODKEY,        Button1,         tag,             {0} },
-    { ClkTagBar,           MODKEY,        Button3,         toggletag,       {0} },
+    { ClkTagBar,           ALTKEY,        Button1,         tag,             {0} },
+    { ClkTagBar,           ALTKEY,        Button3,         toggletag,       {0} },
 };
