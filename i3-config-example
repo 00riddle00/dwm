@@ -7,20 +7,25 @@
 # ***** - is substituted by some other command, or irrelevant to dwm
 # ----- - does not work in dwm yet
 #
-# A few things that also do not work so far:
+# A few things that account for "-----":
+#     * Programs do not open on their indicated workspaces (tags!)
+#     * Some programs need to be opened as floating windows (pavucontrol, qalculate, etc.)
+#     * Change focus from one window to another in an understandable way
+#     * Resize windows in an understandable way
+#     * Move windows in relation to others (probably need to ditch the i3 manual tiling idea 
+#       and learn automatic tiling specifics)
 #
-# * Programs do not open on their indicated workspaces (tags!)
-# * Some programs need to be opened as floating windows (pavucontrol, qalculate, etc.)
-# * multi-screen functionality does not work (or I just haven't learnt how to use it)
-# * Need to open a program (usually terminal) in scratchpad by the program window's name
-# * Sending event signals to dmwblocks (as with pkill -RTMIN+1 i3blocks) 
-#   - LukeSmith has got it working.
+# A few other things that also do not work so far:
+#     * multi-screen functionality does not work (or I just haven't learnt how to use it)
+#     * Need to open a program (usually terminal) in scratchpad by the program window's name
+#     * Sending event signals to dmwblocks (as with pkill -RTMIN+1 i3blocks) 
+#       - LukeSmith has got it working.
 #
-# * Program specific:
-#       ** Picom focuses windows incorrectly (reverse behaviour)
-#          (probably needs changes in picom config)
-#       ** Flameshot hangs up (on ESC key usually) and also cursor 
-#          loses focus after flameshot is closed
+#     * Program specific:
+#          ** Picom focuses windows incorrectly (reverse behaviour)
+#            (probably needs changes in picom config)
+#          ** Flameshot hangs up (on ESC key usually) and also cursor 
+#             loses focus after flameshot is closed
 # -----------------------------------------------------------------------------------
 #  _ _____                    __ _
 # (_)___ /    ___ ___  _ __  / _(_) __ _
