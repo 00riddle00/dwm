@@ -9,12 +9,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 2;  /* border pixel of windows   */
-static const unsigned int gappx    = 2;  /* gaps between windows      */
-static const unsigned int snap     = 32; /* snap pixel                */
-static const int  showbar          = 1;  /* 0 means no bar            */
-static const int  topbar           = 1;  /* 0 means bottom bar        */
-static const int  viewontag        = 0;  /* switch view on tag switch */
+static const unsigned int borderpx = 2;  /* border pixel of windows    */
+static const unsigned int gappx    = 2;  /* gaps between windows       */
+static const unsigned int snap     = 32; /* snap pixel                 */
+static const int  showbar          = 1;  /* 0 means no bar             */
+static const int  topbar           = 1;  /* 0 means bottom bar         */
+static const int  viewontag        = 0;  /* switch view on tag switch  */
+static const int  user_bh          = 24; /* 0 - calculate bar height,  */
+                                         /* >= 1 user_bh as bar height */
 static const char *fonts[]         = { "SauceCodePro Nerd Font:size=9:antialias=true:autohint=true" };
 static const char dmenufont[]      = "SauceCodePro Nerd Font:size=10";
 
