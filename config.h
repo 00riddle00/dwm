@@ -9,11 +9,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 2;  /* border pixel of windows */
-static const unsigned int gappx    = 2;  /* gaps between windows    */
-static const unsigned int snap     = 32; /* snap pixel              */
-static const int showbar           = 1;  /* 0 means no bar          */
-static const int topbar            = 1;  /* 0 means bottom bar      */
+static const unsigned int borderpx = 2;  /* border pixel of windows   */
+static const unsigned int gappx    = 2;  /* gaps between windows      */
+static const unsigned int snap     = 32; /* snap pixel                */
+static const int  showbar          = 1;  /* 0 means no bar            */
+static const int  topbar           = 1;  /* 0 means bottom bar        */
+static const int  viewontag        = 0;  /* switch view on tag switch */
 static const char *fonts[]         = { "SauceCodePro Nerd Font:size=9:antialias=true:autohint=true" };
 static const char dmenufont[]      = "SauceCodePro Nerd Font:size=10";
 
@@ -53,9 +54,11 @@ static const Rule rules[] = {
      *     WM_NAME(STRING)  = title
      */
     /* class            instance  title  tags mask  switchtotag  isfloating  monitor */
-    { "Gimp",           NULL,     NULL,  0,         0,           1,          -1 },
+    { "Gimp",           NULL,     NULL,  1 << 4,    0,           1,          -1 },
     { "qalculate-gtk",  NULL,     NULL,  0,         0,           1,          -1 },
-    { "Firefox",        NULL,     NULL,  1 << 8,    0,           0,          -1 },
+    { "firefox",        NULL,     NULL,  1 << 3,    0,           0,          -1 },
+    { "Clementine",     NULL,     NULL,  1 << 8,    0,           0,          -1 },
+    { "Brave",          NULL,     NULL,  1 << 1,    0,           0,          -1 },
 };
 
 /* layout(s) */
