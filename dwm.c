@@ -93,7 +93,7 @@ struct Client {
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
 	int bw, oldbw;
 	unsigned int tags;
-+	unsigned int switchtotag;
+ 	unsigned int switchtotag;
 	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, issticky;
 	Client *next;
 	Client *snext;
@@ -139,7 +139,7 @@ typedef struct {
 	const char *instance;
 	const char *title;
 	unsigned int tags;
-+	unsigned int switchtotag;
+ 	unsigned int switchtotag;
 	int isfloating;
 	int monitor;
 } Rule;
