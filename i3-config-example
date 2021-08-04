@@ -400,20 +400,20 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 # ===================
 
 # Volume keys
------bindsym $mod+plus		    $run amixer sset Master 5%+ && pkill -RTMIN+1 i3blocks
------bindsym $mod+Shift+plus		$run amixer sset Master 15%+ && pkill -RTMIN+1 i3blocks
------bindsym $mod+minus 		    $run amixer sset Master 5%- && pkill -RTMIN+1 i3blocks
------bindsym $mod+Shift+minus	$run amixer sset Master 15%- && pkill -RTMIN+1 i3blocks
------bindsym $mod+less 		    $run mpc prev
------bindsym $mod+Shift+less		$run mpc seek 0%
------bindsym $mod+greater		$run mpc next
------bindsym $mod+Shift+greater	$run mpc next
++++++bindsym $mod+plus		    $run amixer sset Master 5%+ && pkill -RTMIN+1 i3blocks
++++++bindsym $mod+Shift+plus		$run amixer sset Master 15%+ && pkill -RTMIN+1 i3blocks
++++++bindsym $mod+minus 		    $run amixer sset Master 5%- && pkill -RTMIN+1 i3blocks
++++++bindsym $mod+Shift+minus	$run amixer sset Master 15%- && pkill -RTMIN+1 i3blocks
++++++bindsym $mod+less 		    $run mpc prev
++++++bindsym $mod+Shift+less		$run mpc seek 0%
++++++bindsym $mod+greater		$run mpc next
++++++bindsym $mod+Shift+greater	$run mpc next
 
 # For advancing forward/backward in an mpd song
------bindsym $mod+bracketleft 	      $run mpc seek -10
------bindsym $mod+Shift+bracketleft 	  $run mpc seek -120
------bindsym $mod+bracketright 	      $run mpc seek +10
------bindsym $mod+Shift+bracketright   $run mpc seek +120
++++++bindsym $mod+bracketleft 	      $run mpc seek -10
++++++bindsym $mod+Shift+bracketleft 	  $run mpc seek -120
++++++bindsym $mod+bracketright 	      $run mpc seek +10
++++++bindsym $mod+Shift+bracketright   $run mpc seek +120
 
 # ===================
 #  Extra XF86 Keys
