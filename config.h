@@ -237,10 +237,10 @@ static Key keys[] = {
     { 0,                   XK_F9,                     spawn,           CMD("activate brave") },
     { 0,                   XK_F10,                    spawn,           CMD("activate qalculate-gtk") },
 
-    { 0,                   XK_Insert,                 spawn,           CMD("rofi -show") },
-    { MODKEY,              XK_Insert,                 spawn,           CMD("rofi -show run") },
-    { MODKEY,              XK_End,                    spawn,           CMD("rofi -show Power -modi Power:$BIN/rofi-power") },
-    { MODKEY,              XK_Delete,                 spawn,           CMD("rofi -show Kill -modi Kill:$BIN/rofi-kill") },
+    { 0,                   XK_Insert,                 spawn,           {.v = dmenucmd } },
+    { MODKEY,              XK_Insert,                 spawn,           {.v = dmenucmd } },
+    { MODKEY,              XK_End,                    spawn,           CMD("dmenu-power") },
+    { MODKEY,              XK_Delete,                 spawn,           CMD("dmenu-kill") },
 
     { MODKEY,              XK_F5,                     spawn,           CMD("light -U 10") },
     { MODKEY,              XK_F6,                     spawn,           CMD("light -A 10") },

@@ -12,7 +12,6 @@
 #     * Resize tiling windows in an understandable way
 #     * Move tiling windows in relation to others (probably need to ditch the i3 manual tiling idea 
 #       and learn automatic tiling specifics)
-#     * Smarborders functionality is needed
 #
 # A few other things that also do not work so far:
 #     * multi-screen functionality does not work (or I just haven't learnt how to use it)
@@ -20,7 +19,6 @@
 #       - LukeSmith has got it working.
 #
 #     * Program specific:
-#          ** Do not use rofi, use dmenu
 #          ** Picom focuses windows incorrectly (reverse behaviour)
 #             (probably needs changes in picom config)
 # -----------------------------------------------------------------------------------
@@ -84,7 +82,7 @@
 
 +++++for_window [class="^.*"] border pixel 1
 *****border_radius 0
------smart_borders on
++++++smart_borders on
 
 +++++gaps inner $inner
 +++++gaps outer $outer
