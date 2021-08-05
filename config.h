@@ -9,16 +9,17 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1;  /* border pixel of windows    */
-static const unsigned int gappx    = 2;  /* gaps between windows       */
-static const unsigned int snap     = 32; /* snap pixel                 */
-static const int  showbar          = 1;  /* 0 means no bar             */
-static const int  topbar           = 1;  /* 0 means bottom bar         */
-static const int  viewontag        = 0;  /* switch view on tag switch  */
-static const int  user_bh          = 24; /* 0 - calculate bar height,  */
-                                         /* >= 1 user_bh as bar height */
-static const char *fonts[]         = { "SauceCodePro Nerd Font:size=9:antialias=true:autohint=true" };
-static const char dmenufont[]      = "SauceCodePro Nerd Font:size=10";
+static const unsigned int borderpx  = 1;  /* border pixel of windows    */
+static const unsigned int gappx     = 2;  /* gaps between windows       */
+static const unsigned int snap      = 32; /* snap pixel                 */
+static const unsigned int showbar   = 1;  /* 0 means no bar             */
+static const unsigned int topbar    = 1;  /* 0 means bottom bar         */
+static const unsigned int viewontag = 0;  /* switch view on tag switch  */
+static const unsigned int user_bh   = 24; /* 0 - calculate bar height,  */
+                                          /* >= 1 user_bh as bar height */
+
+static const char *fonts[]    = { "SauceCodePro Nerd Font:size=9:antialias=true:autohint=true" };
+static const char dmenufont[] = "SauceCodePro Nerd Font:size=10";
 
 static const char arch_blue[]         = "#1793d1";
 static const char pretty_blue[]       = "#268bd2";
@@ -56,20 +57,20 @@ static const Rule rules[] = {
      *     WM_NAME(STRING)  = title
      */
     /* class              instance  title  tags mask  switchtotag  isfloating  monitor  float x,y,w,h   floatborderpx */
-    { "Thunar",           NULL,     NULL,  0,         0,           0,          -1                            },
-    { "Brave",            NULL,     NULL,  1 << 1,    0,           0,          -1                            },
-    { "firefox",          NULL,     NULL,  1 << 3,    0,           0,          -1                            },
-    { "Gimp",             NULL,     NULL,  1 << 4,    0,           0,          -1                            },
-    { "Inkscape",         NULL,     NULL,  1 << 4,    0,           0,          -1                            },
-    { "SmartGit",         NULL,     NULL,  1 << 5,    0,           0,          -1                            },
-    { "Thunderbird",      NULL,     NULL,  1 << 6,    0,           0,          -1                            },
-    { "discord",          NULL,     NULL,  1 << 7,    0,           0,          -1                            },
-    { "kdenlive",         NULL,     NULL,  1 << 7,    0,           0,          -1                            },
-    { "Microsoft Teams",  NULL,     NULL,  1 << 7,    0,           0,          -1                            },
-    { "obs",              NULL,     NULL,  1 << 7,    0,           0,          -1                            },
-    { "Steam",            NULL,     NULL,  1 << 7,    0,           0,          -1                            },
-    { "Clementine",       NULL,     NULL,  1 << 8,    0,           0,          -1                            },
-    { "Spotify",          NULL,     NULL,  1 << 8,    0,           0,          -1                            },
+    { "Thunar",           NULL,     NULL,  0,         0,           0,          -1 },
+    { "Brave",            NULL,     NULL,  1 << 1,    0,           0,          -1 },
+    { "firefox",          NULL,     NULL,  1 << 3,    0,           0,          -1 },
+    { "Gimp",             NULL,     NULL,  1 << 4,    0,           0,          -1 },
+    { "Inkscape",         NULL,     NULL,  1 << 4,    0,           0,          -1 },
+    { "SmartGit",         NULL,     NULL,  1 << 5,    0,           0,          -1 },
+    { "Thunderbird",      NULL,     NULL,  1 << 6,    0,           0,          -1 },
+    { "discord",          NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "kdenlive",         NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "Microsoft Teams",  NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "obs",              NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "Steam",            NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "Clementine",       NULL,     NULL,  1 << 8,    0,           0,          -1 },
+    { "Spotify",          NULL,     NULL,  1 << 8,    0,           0,          -1 },
     { "KeePass2",         NULL,     NULL,  0,         0,           1,          -1,      1100,220,730,700,  1 },
     { "Lxappearance",     NULL,     NULL,  0,         0,           1,          -1,      1187,295,625,450,  2 },
     { "Pavucontrol",      NULL,     NULL,  0,         0,           1,          -1,      1187,295,625,450,  2 },
