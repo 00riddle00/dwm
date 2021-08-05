@@ -12,11 +12,9 @@
 #     * Resize tiling windows in an understandable way
 #     * Move tiling windows in relation to others (probably need to ditch the i3 manual tiling idea 
 #       and learn automatic tiling specifics)
+#     * Smarborders functionality is needed
 #
 # A few other things that also do not work so far:
-#     * bottom bar padding expands with user_bh padding, which is unneeded (not in all apps,
-#       however, it applies to urxvt and st)
-#     * a little gap needed between dwm statusbar and the program window.
 #     * multi-screen functionality does not work (or I just haven't learnt how to use it)
 #     * Sending event signals to dmwblocks (as with pkill -RTMIN+1 i3blocks) 
 #       - LukeSmith has got it working.
@@ -24,9 +22,7 @@
 #     * Program specific:
 #          ** Do not use rofi, use dmenu
 #          ** Picom focuses windows incorrectly (reverse behaviour)
-#            (probably needs changes in picom config)
-#          ** Flameshot hangs up (on ESC key usually) and also cursor 
-#             loses focus after flameshot is closed
+#             (probably needs changes in picom config)
 # -----------------------------------------------------------------------------------
 #  _ _____                    __ _
 # (_)___ /    ___ ___  _ __  / _(_) __ _
@@ -88,7 +84,7 @@
 
 +++++for_window [class="^.*"] border pixel 1
 *****border_radius 0
-*****smart_borders on
+-----smart_borders on
 
 +++++gaps inner $inner
 +++++gaps outer $outer
