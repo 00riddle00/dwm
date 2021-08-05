@@ -15,7 +15,7 @@ static const unsigned int snap      = 32; /* snap pixel                 */
 static const unsigned int showbar   = 1;  /* 0 means no bar             */
 static const unsigned int topbar    = 1;  /* 0 means bottom bar         */
 static const unsigned int viewontag = 0;  /* switch view on tag switch  */
-static const unsigned int user_bh   = 24; /* 0 - calculate bar height,  */
+static const unsigned int user_bh   = 21; /* 0 - calculate bar height,  */
                                           /* >= 1 user_bh as bar height */
 
 static const char *fonts[]    = { "SauceCodePro Nerd Font:size=9:antialias=true:autohint=true" };

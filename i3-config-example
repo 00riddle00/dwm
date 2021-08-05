@@ -22,6 +22,7 @@
 #       - LukeSmith has got it working.
 #
 #     * Program specific:
+#          ** Do not use rofi, use dmenu
 #          ** Picom focuses windows incorrectly (reverse behaviour)
 #            (probably needs changes in picom config)
 #          ** Flameshot hangs up (on ESC key usually) and also cursor 
