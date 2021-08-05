@@ -8,18 +8,16 @@
 # ----- - does not work in dwm yet
 #
 # A few things that account for "-----":
-#     * Programs do not open on their indicated workspaces (tags!)
-#     * Some programs need to be opened as floating windows (pavucontrol, qalculate, etc.)
-#     * Change focus from one window to another in an understandable way
-#     * Resize windows in an understandable way
-#     * Move windows in relation to others (probably need to ditch the i3 manual tiling idea 
+#     * Change focus from one tiling window to another in an understandable way
+#     * Resize tiling windows in an understandable way
+#     * Move tiling windows in relation to others (probably need to ditch the i3 manual tiling idea 
 #       and learn automatic tiling specifics)
 #
 # A few other things that also do not work so far:
 #     * bottom bar padding expands with user_bh padding, which is unneeded (not in all apps,
 #       however, it applies to urxvt and st)
+#     * a little gap needed between dwm statusbar and the program window.
 #     * multi-screen functionality does not work (or I just haven't learnt how to use it)
-#     * Need to open a program (usually terminal) in scratchpad by the program window's name
 #     * Sending event signals to dmwblocks (as with pkill -RTMIN+1 i3blocks) 
 #       - LukeSmith has got it working.
 #
@@ -144,10 +142,10 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 
 # Dropdown windows (the order can matter)
 +++++for_window [instance="dropdown_*"] floating enable
------for_window [instance="dropdown_*"] sticky enable
------for_window [instance="dropdown_*"] resize set 625 450
-+++++for_window [instance="dropdown_*"] border pixel 3
------for_window [instance="dropdown_*"] move position 1187 295
+*****for_window [instance="dropdown_*"] sticky enable
++++++for_window [instance="dropdown_*"] resize set 625 450
+*****for_window [instance="dropdown_*"] border pixel 3
++++++for_window [instance="dropdown_*"] move position 1187 295
 +++++for_window [instance="dropdown_*"] move scratchpad
 
 *****for_window [instance="i3blocks_calendar"] floating enable
@@ -161,27 +159,27 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 *****for_window [instance="i3blocks_weather"] border pixel 2
 
 +++++for_window [class="KeePass2"] floating enable
------for_window [class="KeePass2"] sticky enable
------for_window [class="KeePass2"] resize set 730 700
------for_window [class="KeePass2"] move position 1100 220
+*****for_window [class="KeePass2"] sticky enable
++++++for_window [class="KeePass2"] resize set 730 700
++++++for_window [class="KeePass2"] move position 1100 220
 
 +++++for_window [class="Lxappearance"] floating enable
------for_window [class="Lxappearance"] sticky enable
------for_window [class="Lxappearance"] resize set 625 450
------for_window [class="Lxappearance"] border pixel 3
------for_window [class="Lxappearance"] move position 1187 295
+*****for_window [class="Lxappearance"] sticky enable
++++++for_window [class="Lxappearance"] resize set 625 450
++++++for_window [class="Lxappearance"] border pixel 3
++++++for_window [class="Lxappearance"] move position 1187 295
 
 +++++for_window [class="Pavucontrol"] floating enable
------for_window [class="Pavucontrol"] sticky enable
------for_window [class="Pavucontrol"] resize set 625 450
------for_window [class="Pavucontrol"] border pixel 3
------for_window [class="Pavucontrol"] move position 1187 295
+*****for_window [class="Pavucontrol"] sticky enable
++++++for_window [class="Pavucontrol"] resize set 625 450
++++++for_window [class="Pavucontrol"] border pixel 3
++++++for_window [class="Pavucontrol"] move position 1187 295
 
 +++++for_window [class="Qalculate-gtk"] floating enable
------for_window [class="Qalculate-gtk"] sticky enable
------for_window [class="Qalculate-gtk"] resize set 625 450
------for_window [class="Qalculate-gtk"] border pixel 3
------for_window [class="Qalculate-gtk"] move position 1187 295
+*****for_window [class="Qalculate-gtk"] sticky enable
++++++for_window [class="Qalculate-gtk"] resize set 625 450
++++++for_window [class="Qalculate-gtk"] border pixel 3
++++++for_window [class="Qalculate-gtk"] move position 1187 295
 
 +++++for_window [class="Gimp"]                move workspace $ws5
 +++++for_window [class="Inkscape"]            move workspace $ws5
@@ -228,7 +226,7 @@ client.placeholder         $arch_blue     $arch_blue            $light_blue     
 *****bindsym $mod+e $run wmctrl -a "File Manager"
 +++++bindsym $mod+g $run activate smartgit
 +++++bindsym $mod+semicolon $run activate libreoffice
------bindsym $mod+n workspace $ws2; $run brave
++++++bindsym $mod+n workspace $ws2; $run brave
 +++++bindsym $mod+t $run qutebrowser-wall 
 +++++bindsym $mod+r $run $term -e $FILE
 +++++bindsym $mod+y $run $term -e calcurse -D ~/.config/calcurse
