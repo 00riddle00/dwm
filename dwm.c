@@ -1425,8 +1425,7 @@ resizeclient(Client *c, int x, int y, int w, int h, int bw)
  	if (c->isfloating && c->hasfloatbw && !c->isfullscreen)
  		wc.border_width = c->floatborderpx;
  	else {
- 		/* wc.border_width = c->bw;                        <-- before smartborders patch */
- 	    c->oldbw = c->bw; c->bw = wc.border_width = bw; /* <-- after the patch           */
+ 	    c->oldbw = c->bw; c->bw = wc.border_width = bw;
     }
 
 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
@@ -1871,14 +1870,12 @@ tile(Monitor *m)
 	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if (i < m->nmaster) {
 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
-			/* resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0); <-- before smartborders patch */
- 			resize(c, m->wx, m->wy + my, mw - 2*bw, h - 2*bw, bw, 0);       /* <-- after the patch           */
+ 			resize(c, m->wx, m->wy + my, mw - 2*bw, h - 2*bw, bw, 0);
 			if (my + HEIGHT(c) < m->wh)
 				my += HEIGHT(c);
 		} else {
 			h = (m->wh - ty) / (n - i);
-			/* resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0); <-- before smartborders patch */
- 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - 2*bw, h - 2*bw, bw, 0);       /* <-- after the patch           */
+ 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - 2*bw, h - 2*bw, bw, 0);
 			if (ty + HEIGHT(c) < m->wh)
 				ty += HEIGHT(c);
 		}
