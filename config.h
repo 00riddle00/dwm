@@ -56,11 +56,26 @@ static const Rule rules[] = {
      *     WM_NAME(STRING)  = title
      */
     /* class            instance  title  tags mask  switchtotag  isfloating  monitor */
-    { "Gimp",           NULL,     NULL,  1 << 4,    0,           1,          -1 },
-    { "qalculate-gtk",  NULL,     NULL,  0,         0,           1,          -1 },
-    { "firefox",        NULL,     NULL,  1 << 3,    0,           0,          -1 },
-    { "Clementine",     NULL,     NULL,  1 << 8,    0,           0,          -1 },
+    { "Thunar",         NULL,     NULL,  0,         0,           0,          -1 },
+
     { "Brave",          NULL,     NULL,  1 << 1,    0,           0,          -1 },
+    { "firefox",        NULL,     NULL,  1 << 3,    0,           0,          -1 },
+    { "Gimp",           NULL,     NULL,  1 << 4,    0,           0,          -1 },
+    { "Inkscape",       NULL,     NULL,  1 << 4,    0,           0,          -1 },
+    { "SmartGit",       NULL,     NULL,  1 << 5,    0,           0,          -1 },
+    { "Thunderbird",    NULL,     NULL,  1 << 6,    0,           0,          -1 },
+    { "discord",        NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "kdenlive",       NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "Microsoft Teams",NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "obs",            NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "Steam",          NULL,     NULL,  1 << 7,    0,           0,          -1 },
+    { "Clementine",     NULL,     NULL,  1 << 8,    0,           0,          -1 },
+    { "Spotify",        NULL,     NULL,  1 << 8,    0,           0,          -1 },
+
+    { "KeePass2",       NULL,     NULL,  0,         0,           1,          -1 },
+    { "Qalculate-gtk",  NULL,     NULL,  0,         0,           1,          -1 },
+    { "Pavucontrol",    NULL,     NULL,  0,         0,           1,          -1 },
+    { "LXappearance",   NULL,     NULL,  0,         0,           1,          -1 },
 };
 
 /* layout(s) */
