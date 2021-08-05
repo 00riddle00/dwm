@@ -7,20 +7,16 @@
 # ***** - is substituted by some other command, or irrelevant to dwm
 # ----- - does not work in dwm yet
 #
-# A few things that account for "-----":
-#     * Change focus from one tiling window to another in an understandable way
-#     * Resize tiling windows in an understandable way
-#     * Move tiling windows in relation to others (probably need to ditch the i3 manual tiling idea 
-#       and learn automatic tiling specifics)
+# TODO:
+#     * Tiling windows
+#           ** Change focus from one tiling window to another in an understandable way
+#           ** Resize tiling windows in an understandable way
+#           ** Move tiling windows coherently in relation to others
 #
-# A few other things that also do not work so far:
-#     * multi-screen functionality does not work (or I just haven't learnt how to use it)
+#     * Learn multi-screen functionality
+#
 #     * Sending event signals to dmwblocks (as with pkill -RTMIN+1 i3blocks) 
-#       - LukeSmith has got it working.
-#
-#     * Program specific:
-#          ** Picom focuses windows incorrectly (reverse behaviour)
-#             (probably needs changes in picom config)
+#     
 # -----------------------------------------------------------------------------------
 #  _ _____                    __ _
 # (_)___ /    ___ ___  _ __  / _(_) __ _
@@ -67,6 +63,7 @@
 *****$run picom -b
 *****$run $term -name dropdown_aux -e tmux new-session
 
+# O
 # This amazing script uses the i3ipc-python library to switch the layout 
 # splith/splitv depending on the currently focused window dimensions.
 ******$run_always autotiling
