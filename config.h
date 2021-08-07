@@ -225,6 +225,7 @@ static Key keys[] = {
     /*  Function keys                                                                                                                 */
     /* ============================================================================================================================== */
 
+    { MODKEY,              XK_F1,                     spawn,           CMD("urxvt -e killall picom && picom -b") },
     { ALTKEY,              XK_F2,                     spawn,           CMD("urxvt -name t2") },
     { 0,                   XK_F2,                     spawn,           CMD("wmctrl -x -a t2.URxvt") },
     { ALTKEY,              XK_F3,                     spawn,           CMD("dwm-vimnotes") },
@@ -235,7 +236,6 @@ static Key keys[] = {
     { 0,                   XK_F8,                     spawn,           CMD("activate teams") },
     { 0,                   XK_F9,                     spawn,           CMD("activate brave") },
     { 0,                   XK_F10,                    spawn,           CMD("activate qalculate-gtk") },
-    { MODKEY,              XK_F11,                    spawn,           CMD("urxvt -e killall picom && picom -b") },
 
     { 0,                   XK_Insert,                 spawn,           {.v = dmenucmd } },
     { MODKEY,              XK_Insert,                 spawn,           {.v = dmenucmd } },
